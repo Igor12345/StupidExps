@@ -5,6 +5,8 @@ VisualStudioVersion = 17.3.32901.215
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MinimumHeightTrees", "MinimumHeightTrees\MinimumHeightTrees.csproj", "{BD399159-ECC3-49DF-A0D7-02A4367A8C0A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MinimumHeightTreesTests", "MinimumHeightTreesTests\MinimumHeightTreesTests.csproj", "{80F39E18-A349-4518-B180-A053FBFC5A9C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{BD399159-ECC3-49DF-A0D7-02A4367A8C0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BD399159-ECC3-49DF-A0D7-02A4367A8C0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BD399159-ECC3-49DF-A0D7-02A4367A8C0A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80F39E18-A349-4518-B180-A053FBFC5A9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80F39E18-A349-4518-B180-A053FBFC5A9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80F39E18-A349-4518-B180-A053FBFC5A9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80F39E18-A349-4518-B180-A053FBFC5A9C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
