@@ -21,6 +21,10 @@
                 AddEdge(result, edge);
             }
 
+            if (!result.Any())
+            {
+                result.Add(0, new HashSet<int>());
+            }
             return result;
         }
 
@@ -39,5 +43,5 @@
 
         private int NodesNumber { get; init; }
         public Dictionary<int, HashSet<int>> AdjacencyList { get; init; }
-    };
+    }
 }
