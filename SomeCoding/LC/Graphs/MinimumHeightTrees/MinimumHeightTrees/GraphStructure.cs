@@ -28,9 +28,9 @@
         {
             foreach (int i in edge)
             {
-                if (!adjacencyList.ContainsKey(edge[i]))
+                if (!adjacencyList.ContainsKey(i))
                 {
-                    adjacencyList.Add(edge[i], new HashSet<int>());
+                    adjacencyList.Add(i, new HashSet<int>());
                 }
             }
             adjacencyList[edge[0]].Add(edge[1]);
