@@ -350,6 +350,7 @@ MigrationBackup/
 .ionide/
 
 # Default ignored files
+.idea/
 /shelf/
 /workspace.xml
 # Rider ignored files
