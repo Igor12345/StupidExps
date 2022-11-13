@@ -351,6 +351,7 @@ MigrationBackup/
 
 # Default ignored files
 .idea/
+.vscode/
 /shelf/
 /workspace.xml
 # Rider ignored files
