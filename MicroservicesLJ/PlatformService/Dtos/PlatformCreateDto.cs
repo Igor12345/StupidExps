@@ -1,19 +1,15 @@
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
-namespace PlatformService.Models;
+namespace PlatformService.Dtos;
 
-public class Platform{
-
-    [Key]
-    [Required]
-    public int Id { get; set; }
-
+public class PlatformCreateDto
+{
     [Required]
     public string Name { get; set; }
-
+    
     [Required]
     public string Publisher { get; set; }
-
+    
     [Required]
     public string Cost { get; set; }
 }
