@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FloodFill_733", "FloodFill_
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NumberOfIslansTests", "NumberOfIslansTests\NumberOfIslansTests.csproj", "{E43E3308-08A5-4D80-8CC1-15819F9FDDBF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Distance", "Distance\Distance.csproj", "{72DA83F7-9F52-4196-87AE-A943408B6765}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{E43E3308-08A5-4D80-8CC1-15819F9FDDBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E43E3308-08A5-4D80-8CC1-15819F9FDDBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E43E3308-08A5-4D80-8CC1-15819F9FDDBF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72DA83F7-9F52-4196-87AE-A943408B6765}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72DA83F7-9F52-4196-87AE-A943408B6765}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72DA83F7-9F52-4196-87AE-A943408B6765}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72DA83F7-9F52-4196-87AE-A943408B6765}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
