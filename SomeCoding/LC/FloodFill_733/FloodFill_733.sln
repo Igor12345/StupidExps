@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NumberOfIslansTests", "Numb
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Distance", "Distance\Distance.csproj", "{72DA83F7-9F52-4196-87AE-A943408B6765}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DistanceTestds", "DistanceTestds\DistanceTestds.csproj", "{B3F47691-30CE-4658-B861-2E3E711DF99A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{72DA83F7-9F52-4196-87AE-A943408B6765}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{72DA83F7-9F52-4196-87AE-A943408B6765}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{72DA83F7-9F52-4196-87AE-A943408B6765}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3F47691-30CE-4658-B861-2E3E711DF99A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3F47691-30CE-4658-B861-2E3E711DF99A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3F47691-30CE-4658-B861-2E3E711DF99A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3F47691-30CE-4658-B861-2E3E711DF99A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
