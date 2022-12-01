@@ -8,6 +8,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Distance", "Distance\Distan
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DistanceTestds", "DistanceTestds\DistanceTestds.csproj", "{B3F47691-30CE-4658-B861-2E3E711DF99A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Directions", "Directions\Directions.csproj", "{FB46E994-1EE7-474A-8C15-8958B650B902}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DirectionsTests", "DirectionsTests\DirectionsTests.csproj", "{BE22A50E-F19F-4E69-A8B5-D48D26D7A6A8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +34,13 @@ Global
 		{B3F47691-30CE-4658-B861-2E3E711DF99A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B3F47691-30CE-4658-B861-2E3E711DF99A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B3F47691-30CE-4658-B861-2E3E711DF99A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB46E994-1EE7-474A-8C15-8958B650B902}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB46E994-1EE7-474A-8C15-8958B650B902}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB46E994-1EE7-474A-8C15-8958B650B902}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB46E994-1EE7-474A-8C15-8958B650B902}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE22A50E-F19F-4E69-A8B5-D48D26D7A6A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE22A50E-F19F-4E69-A8B5-D48D26D7A6A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE22A50E-F19F-4E69-A8B5-D48D26D7A6A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE22A50E-F19F-4E69-A8B5-D48D26D7A6A8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
