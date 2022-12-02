@@ -6,7 +6,6 @@ public class NumberOfOperationsToMakeNetworkConnected_1319
     private readonly Dictionary<int, List<int>> _adjacency = new();
     private int _components;
     private HashSet<(int,int)> _backEdges = new();
-    private int _edges;
 
     public int MakeConnected(int n, int[][] connections)
     {
@@ -53,31 +52,23 @@ public class NumberOfOperationsToMakeNetworkConnected_1319
         Stack<(int, int)> stack = new();
         HashSet<int> visited = new();
         stack.Push((-1, start));
-        Console.WriteLine($"Starting DFS and new component from {start}");
 
         while (stack.Any())
         {
             var (last, vertex) = stack.Pop();
             if (visited.Contains(vertex))
             {
-                Console.WriteLine($"Increase back edges {last} - {vertex}");
                 if (!_backEdges.Contains((last, vertex)))
                     _backEdges.Add((vertex, last));
                 continue;
             }
 
-            Console.WriteLine($"Increase forward edges {last} - {vertex}");
-            if (last != -1)
-                _edges++;
             visited.Add(vertex);
             _belongsToComponents.Add(vertex);
-            Console.WriteLine($"Adding {vertex} to component and to visited");
-
             foreach (int next in _adjacency[vertex])
             {
                 if (next == last)
                     continue;
-                Console.WriteLine($"From {vertex} next is {next}");
 
                 stack.Push((vertex, next));
             }
