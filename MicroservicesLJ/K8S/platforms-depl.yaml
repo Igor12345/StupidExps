@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+matadata:
+    name: platforms
+    labels:
+        app: platformservice2
+spec:
+  replicas: 1
+  selector: 
+    matchLabels:
+      app: platformservice2
+  template:
+    metadata:
+      name: platforms-depl
+      labels:
+        app: platformservice2
+    spec:
+      containers:
+        - name: platformservice2
+          image: igorth/platformservice2:latest
