@@ -10,12 +10,10 @@ public class FindEventualSafeStates802
 
         for (int i = 0; i < graph.Length; i++)
         {
-            Console.WriteLine($"Start node {i}, cleaning firstly visited");
-
             if (!_secondlyVisited.Contains(i))
             {
                 _firstlyVisited.Clear();
-                DfsCycle(graph, i, 2);
+                DfsCycle(graph, i);
             }
         }
 
@@ -28,41 +26,34 @@ public class FindEventualSafeStates802
         return _safeNodes.ToList();
     }
 
-    private bool DfsCycle(int[][]graph, int start, int shift)
+    private bool DfsCycle(int[][]graph, int start)
     {
         bool cycleFound = false;
-        Console.WriteLine($"{new string(' ', shift)} Entering DFS {start}");
         _firstlyVisited.Add(start);
         foreach (int i in graph[start])
         {
-            Console.WriteLine($"{new string(' ', shift)} Processing {i} from {start}");
+            if (_cycles.Contains(i))
+            {
+                _cycles.Add(start);
+                cycleFound = true;
+            }
             if (!_firstlyVisited.Contains(i) && !_secondlyVisited.Contains(i))
             {
-                var cycle = DfsCycle(graph, i, shift + 2) ;
+                var cycle = DfsCycle(graph, i) ;
                 cycleFound = cycle || cycleFound;
-                Console.WriteLine($"{new string(' ', shift)} Processing {i} from {start}, cycle found: {cycle}, before was: {cycleFound}");
                 if (cycle)
                 {
-                    Console.WriteLine($"{new string(' ', shift)} Adding {start} to cycles, because of {i}");
                     _cycles.Add(start);
                 }
             }
             else if (_firstlyVisited.Contains(i) && !_secondlyVisited.Contains(i))
             {
-                Console.WriteLine($"{new string(' ', shift)} Tne node {i} belong to cycle, so do {start}");
                 cycleFound = true;
                 _cycles.Add(i);
                 _cycles.Add(start);
             }
-
-            // if (_cycles.Contains(i) && !_secondlyVisited.Contains(i))
-            // {
-            //     Console.WriteLine($"Adding {start} to cycles, because of {i}");
-            //     _cycles.Add(start);
-            // }
         }
 
-        Console.WriteLine($"{new string(' ', shift)} The node {start} added to visited Twice");
         _secondlyVisited.Add(start);
         return cycleFound;
     }
