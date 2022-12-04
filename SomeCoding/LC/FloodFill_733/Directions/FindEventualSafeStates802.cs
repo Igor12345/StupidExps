@@ -11,10 +11,10 @@ public class FindEventualSafeStates802
         for (int i = 0; i < graph.Length; i++)
         {
             Console.WriteLine($"Start node {i}, cleaning firstly visited");
-            _firstlyVisited.Clear();
+
             if (!_secondlyVisited.Contains(i))
             {
-                Console.WriteLine($"Node {i} was not visited twice");
+                _firstlyVisited.Clear();
                 DfsCycle(graph, i, 2);
             }
         }
@@ -31,15 +31,17 @@ public class FindEventualSafeStates802
     private bool DfsCycle(int[][]graph, int start, int shift)
     {
         bool cycleFound = false;
-        Console.WriteLine($"{new string(' ', shift)} Entering DFS {start}, added to Firstly visited");
+        Console.WriteLine($"{new string(' ', shift)} Entering DFS {start}");
         _firstlyVisited.Add(start);
         foreach (int i in graph[start])
         {
             Console.WriteLine($"{new string(' ', shift)} Processing {i} from {start}");
             if (!_firstlyVisited.Contains(i) && !_secondlyVisited.Contains(i))
             {
-                cycleFound = DfsCycle(graph, i, shift + 2);
-                if (cycleFound)
+                var cycle = DfsCycle(graph, i, shift + 2) ;
+                cycleFound = cycle || cycleFound;
+                Console.WriteLine($"{new string(' ', shift)} Processing {i} from {start}, cycle found: {cycle}, before was: {cycleFound}");
+                if (cycle)
                 {
                     Console.WriteLine($"{new string(' ', shift)} Adding {start} to cycles, because of {i}");
                     _cycles.Add(start);
