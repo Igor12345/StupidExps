@@ -4,6 +4,7 @@ add to hosts 127.0.0.1       acme.com
 kubectl apply -f platforms-np-srv.yaml
 kubectl apply -f platforms-depl.yaml
 kubectl apply -f commands-depl.yaml
+kubectl apply -f ingress-srv.yaml
 
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.5.1/deploy/static/provider/aws/deploy.yaml
 
@@ -30,3 +31,5 @@ kubectl cluster-info
 kubectl get clusterrolebindings system:node
 kubectl config current-context
 kubectl config get-context
+
+kubectl get storageclass
