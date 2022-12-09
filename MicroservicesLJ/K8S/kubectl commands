@@ -19,6 +19,7 @@ kubectl delete deployment commands-depl
 kubectl delete deployment platform-depl 
 
 kubectl get services
+kubectl get services -A
 kubectl describe services/commands-clusterip-srv
 
 kubectl cluster-info dump
