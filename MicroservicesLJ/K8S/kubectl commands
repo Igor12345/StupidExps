@@ -1,0 +1,29 @@
+
+kubectl apply -f platforms-np-srv.yaml
+kubectl apply -f platforms-depl.yaml
+kubectl apply -f commands-depl.yaml
+
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.5.1/deploy/static/provider/aws/deploy.yaml
+
+kubectl get namespaces
+kubectl get pods
+kubectl get pods --namespace ingress-nginx 
+kubectl get pods -n ingress-nginx 
+
+kubectl get deployments
+kubectl describe deployment commands-depl  
+
+kubectl rollout restart deployment commands-depl 
+
+kubectl delete deployment commands-depl
+kubectl delete deployment platform-depl 
+
+kubectl get services
+kubectl describe services/commands-clusterip-srv
+
+kubectl cluster-info dump
+kubectl version
+kubectl cluster-info
+kubectl get clusterrolebindings system:node
+kubectl config current-context
+kubectl config get-context
