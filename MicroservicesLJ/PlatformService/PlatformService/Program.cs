@@ -9,8 +9,12 @@ var builder = WebApplication.CreateBuilder(args);
 if (builder.Environment.IsProduction())
 {
     Console.WriteLine(" Production Environment, using SqlServer db.");
+    Console.WriteLine($"Connection: {builder.Configuration.GetConnectionString("PlatformsConnection")}");
+    Console.WriteLine($"Connection 2: {builder.Configuration["ConnectionString.PlatformsConnection"]}");
     builder.Services.AddDbContext<AppDbContext>(opt =>
-        opt.UseSqlServer(builder.Configuration.GetConnectionString("PlatformsConnection")));
+    {
+        opt.UseSqlServer(builder.Configuration.GetConnectionString("PlatformsConnection"));
+    });
 }
 else
 {
@@ -41,7 +45,7 @@ if (app.Environment.IsDevelopment())
 
 Console.WriteLine($"v3 Command service endpoint is {builder.Configuration["CommandService"]}");
 
-app.UseHttpsRedirection();
+// app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
