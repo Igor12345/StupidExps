@@ -15,7 +15,7 @@ public static class PrepDb
         if (context == null) throw new ArgumentNullException(nameof(context));
         if (!context.Platforms.Any())
         {
-            Console.WriteLine("Seeding data");
+            Console.WriteLine("v2 Seeding data");
             context.Platforms.AddRange(
                 new Platform()
                 {
