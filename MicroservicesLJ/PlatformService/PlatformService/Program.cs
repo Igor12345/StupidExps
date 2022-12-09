@@ -5,18 +5,23 @@ using PlatformService.SyncDataServices.Http;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-if (builder.Environment.IsProduction())
-{
-    Console.WriteLine(" Production Environment, using SqlServer db.");
-    builder.Services.AddDbContext<AppDbContext>(opt =>
-        opt.UseSqlServer(builder.Configuration.GetConnectionString("PlatformsConnection")));
-}
-else
-{
-    Console.WriteLine(" Development Environment, using InMem db.");
-    builder.Services.AddDbContext<AppDbContext>(opt =>
-        opt.UseInMemoryDatabase("InMem"));
-}
+
+Console.WriteLine(" Production Environment, using SqlServer db.");
+builder.Services.AddDbContext<AppDbContext>(opt =>
+    opt.UseSqlServer(builder.Configuration.GetConnectionString("PlatformsConnection")));
+
+// if (builder.Environment.IsProduction())
+// {
+//     Console.WriteLine(" Production Environment, using SqlServer db.");
+//     builder.Services.AddDbContext<AppDbContext>(opt =>
+//         opt.UseSqlServer(builder.Configuration.GetConnectionString("PlatformsConnection")));
+// }
+// else
+// {
+//     Console.WriteLine(" Development Environment, using InMem db.");
+//     builder.Services.AddDbContext<AppDbContext>(opt =>
+//         opt.UseInMemoryDatabase("InMem"));
+// }
 
 builder.Services.AddScoped<IPlatformRepo, PlatformRepo>();
 
@@ -45,6 +50,6 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
-PrepDb.PrepPopulation(app);
+// PrepDb.PrepPopulation(app, builder.Environment.IsProduction());
 
 app.Run();
