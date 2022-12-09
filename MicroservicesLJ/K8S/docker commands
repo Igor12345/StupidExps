@@ -1,0 +1,5 @@
+docker build -t igorth/platformservice .
+docker build -t igorth/commandservice .
+
+docker run -p 8080:80 igorth/platformservice .
+docker run -p 8080:80 igorth/commandservice .
