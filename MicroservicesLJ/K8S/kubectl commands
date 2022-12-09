@@ -35,3 +35,5 @@ kubectl config get-context
 kubectl get storageclass
 kubectl apply -f local-pvc.yaml
 kubectl get pvc
+
+kubectl create secret generic mssql --from-literal=SA_PPASSWORD="pa55w0rd!"
