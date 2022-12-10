@@ -5,6 +5,7 @@ kubectl apply -f platforms-np-srv.yaml
 kubectl apply -f platforms-depl.yaml
 kubectl apply -f commands-depl.yaml
 kubectl apply -f ingress-srv.yaml
+kubectl apply -f rabbitmq-depl.yaml
 
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.5.1/deploy/static/provider/aws/deploy.yaml
 
@@ -17,6 +18,7 @@ kubectl get deployments
 kubectl describe deployment commands-depl  
 
 kubectl rollout restart deployment commands-depl 
+kubectl rollout restart deployment platform-depl  
 
 kubectl delete deployment commands-depl
 kubectl delete deployment platform-depl 
