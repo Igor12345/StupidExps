@@ -23,7 +23,7 @@ public class EventProcessor : IEventProcessor
         switch (eventType)
         {
             case EventType.PlatformPublished:
-
+                AddPlatform(message);
                 break;
             default:
                 break;
