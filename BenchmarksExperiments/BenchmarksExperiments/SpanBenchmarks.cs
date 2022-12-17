@@ -33,8 +33,8 @@ public class SpanBenchmarks
     [Benchmark]
     public Span<int> Span() => _array.AsSpan().Slice(Size / 2, Size / 4);
 
-    public void AboutStrings()
-    {
-        MemoryExtensions.ToLower()
-    }
+    // public void AboutStrings()
+    // {
+    //     MemoryExtensions.ToLower()
+    // }
 }

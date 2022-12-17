@@ -2,4 +2,4 @@
 
 using BenchmarkDotNet.Running;
 
-var summary = BenchmarkRunner.Run<SpanBenchmarks>();
+var summary = BenchmarkRunner.Run<ArrayBenchmarks>();
