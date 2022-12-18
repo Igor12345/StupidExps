@@ -1,6 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using ServiceOne.API;
 using ServiceOne.SomethingUseful;
@@ -8,14 +9,16 @@ using ServiceOne.SomethingUseful;
 Console.WriteLine("Hello, Azure!");
 
 using IHost host = Host.CreateDefaultBuilder(args).Build();
+IConfiguration configFromHosting = host.Services.GetRequiredService<IConfiguration>();
+
 IConfiguration config = new ConfigurationBuilder()
     .AddJsonFile("appsettings.json")
     .AddEnvironmentVariables()
     .Build();
 
 // Get values from the config given their key and their target type.
-AzureConnectionsSettings settings = config.GetRequiredSection("AzureConnections").Get<AzureConnectionsSettings>();
-StorageSettings storageSettings = config.GetRequiredSection("AzureConnections:Storage").Get<StorageSettings>();
+AzureConnectionsSettings settings = config.GetRequiredSection("AzureConnections").Get<AzureConnectionsSettings>()!;
+StorageSettings storageSettings = configFromHosting.GetRequiredSection("AzureConnections:Storage").Get<StorageSettings>()!;
 
 MessageSender sender = new MessageSender(settings.Storage);
 

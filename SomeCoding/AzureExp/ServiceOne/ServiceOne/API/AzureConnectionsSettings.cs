@@ -2,5 +2,5 @@
 
 public class AzureConnectionsSettings
 {
-    public StorageSettings? Storage { get; set; }
+    public StorageSettings Storage { get; set; } = null!;
 }
