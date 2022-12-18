@@ -2,15 +2,21 @@
 using Azure.Storage.Queues.Models;
 using ServiceOne.API;
 
-namespace ServiceOne.SomethingUsefull;
+namespace ServiceOne.SomethingUseful;
 
 public class MessageSender
 {
+    private readonly StorageSettings _settingsStorage;
     private QueueClient? _queueClient;
 
-    public bool SendPing(string text)
+    public MessageSender(StorageSettings settingsStorage)
     {
-        _queueClient ??= CreateClient();
+        _settingsStorage = settingsStorage ?? throw new ArgumentNullException(nameof(settingsStorage));
+    }
+
+    public bool SendPing(string text, string queueName = "cool-queue")
+    {
+        _queueClient ??= CreateClient(queueName);
         IDictionary<string,string> metadata = new Dictionary<string, string>();
         if (_queueClient.Exists())
         {
@@ -36,9 +42,9 @@ public class MessageSender
         _queueClient.SendMessage(text);
         return true;
     }
-    public void PeekMessage(string queueName)
+    public void PeekMessage(string queueName="cool-queue")
     {
-        _queueClient ??= CreateClient();
+        _queueClient ??= CreateClient(queueName);
 
         if (_queueClient.Exists())
         { 
@@ -50,9 +56,9 @@ public class MessageSender
         }
     }
 
-    public void UpdateMessage(string queueName)
+    public void UpdateMessage(string queueName="cool-queue")
     {
-        _queueClient ??= CreateClient();
+        _queueClient ??= CreateClient(queueName);
 
         if (_queueClient.Exists())
         {
@@ -68,9 +74,9 @@ public class MessageSender
         }
     }
     
-    public void DequeueMessage(string queueName)
+    public void DequeueMessage(string queueName="cool-queue")
     {
-        _queueClient ??= CreateClient();
+        _queueClient ??= CreateClient(queueName);
 
         if (_queueClient.Exists())
         {
@@ -85,9 +91,9 @@ public class MessageSender
         }
     }
 
-    private QueueClient CreateClient()
+    private QueueClient CreateClient(string queueName)
     {
-        _queueClient = QueueClientFactory.CreateClientWithDefaultAzureCredential("cool-queue");
+        _queueClient = QueueClientFactory.CreateClientWithDefaultAzureCredential(_settingsStorage, queueName);
         return _queueClient;
     }
 }
