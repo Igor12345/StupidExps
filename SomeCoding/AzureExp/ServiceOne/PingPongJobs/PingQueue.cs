@@ -10,9 +10,16 @@ namespace PingPongJobs
 {
    public class PingQueue
    {
-      public static void ProcessQueueMessage([QueueTrigger("cool-queue")] string message, ILogger logger)
+      //https://learn.microsoft.com/en-us/azure/app-service/webjobs-sdk-how-to#custom-binding-expressions
+      public static void ProcessQueueMessage([QueueTrigger("%customqueue%")] string message, ILogger logger)
       {
          logger.LogWarning(message);
       }
+
+
+      // public static void ProcessQueueMessage2([QueueTrigger("cool-queue")] string message, ILogger logger)
+      // {
+      //    logger.LogWarning(message);
+      // }
    }
 }
