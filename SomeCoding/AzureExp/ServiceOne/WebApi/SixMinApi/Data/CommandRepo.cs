@@ -12,7 +12,7 @@ public class CommandRepo : ICommandRepo
         _context = context ?? throw new ArgumentNullException(nameof(context));
     }
     
-    public async Task SaveChanges()
+    public async Task SaveChangesAsync()
     {
         await _context.SaveChangesAsync();
     }
