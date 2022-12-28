@@ -19,7 +19,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApiJob", "WebApiJob\WebA
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Experimental", "Experimental", "{39350137-4B37-4CBE-8429-2863F3EB83FA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KeyVaultUsage", "KeyVaultUsage\KeyVaultUsage.csproj", "{0FADAE49-E53C-4E99-8376-692A00D2C5C6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KeyVaultUsage", "KeyVaultUsage\KeyVaultUsage.csproj", "{0FADAE49-E53C-4E99-8376-692A00D2C5C6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ForCreatedFromAz", "WebApi\ForCreatedFromAz\ForCreatedFromAz.csproj", "{56567BA9-C09C-4528-95F2-A070E0B7933B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{0FADAE49-E53C-4E99-8376-692A00D2C5C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0FADAE49-E53C-4E99-8376-692A00D2C5C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0FADAE49-E53C-4E99-8376-692A00D2C5C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56567BA9-C09C-4528-95F2-A070E0B7933B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56567BA9-C09C-4528-95F2-A070E0B7933B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56567BA9-C09C-4528-95F2-A070E0B7933B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56567BA9-C09C-4528-95F2-A070E0B7933B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -61,6 +67,7 @@ Global
 		{DA8C9CB0-BFEC-4292-A859-2387324B7A81} = {DECA22F9-2A35-4F98-AFDF-668294F6D445}
 		{6A8D7288-FB8C-41FF-83ED-BBC0B4B1BE8C} = {DECA22F9-2A35-4F98-AFDF-668294F6D445}
 		{0FADAE49-E53C-4E99-8376-692A00D2C5C6} = {39350137-4B37-4CBE-8429-2863F3EB83FA}
+		{56567BA9-C09C-4528-95F2-A070E0B7933B} = {07D07E4A-F4D9-42AA-8A3E-A0144FA5833C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {930CDC24-0244-4E7F-A332-3B22D67FC29E}
